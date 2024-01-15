@@ -19,3 +19,4 @@ export const ContentRight = styled.section`
     justify-content: center;
     align-items: center;
 `
+
