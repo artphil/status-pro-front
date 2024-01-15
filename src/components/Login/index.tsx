@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { LoginContainer, LoginTitle } from "./stlyle";
+
+import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
+import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
+
+import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
 
 
 function Login() {
@@ -13,12 +17,21 @@ function Login() {
     return (
         <LoginContainer>
             <LoginTitle>Login</LoginTitle>
-            <input type="text" placeholder="login"
-                onChange={event => setUserName(event.target.value)} />
-            <input type="password" placeholder="senha" />
-            <button
-                onClick={login}
-            >Entrar</button>
+            <LoginField>
+                <EmailIco />
+
+                <input type="text" placeholder="Usuário"
+                    onChange={event => setUserName(event.target.value)} />
+            </LoginField>
+            <LoginField>
+                <PassIco />
+                <input type="password" placeholder="Senha" />
+            </LoginField>
+            <LoginButtons>
+                <LoginButtonNormal onClick={login} >Entrar</LoginButtonNormal>
+                <LoginButtonNormal onClick={()=> alert('Serviço não implementado')} >Cadastro</LoginButtonNormal>
+                <LoginButtonWarm onClick={()=> alert('Serviço não implementado')} >Recuperar senha</LoginButtonWarm>
+            </LoginButtons>
         </LoginContainer>
     );
 }

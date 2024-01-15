@@ -5,10 +5,8 @@ export const LoginContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-bottom: 0.4em;
-    background-color: #171717;
+    padding: 0.04em 2em;
+    background-color: var(--color-variant-1);
     border-radius: 25px;
     transition: .4s ease-in-out;
 
@@ -22,11 +20,9 @@ export const LoginTitle = styled.h2`
     text-align: center;
     margin: 2em;
     color: rgb(255, 255, 255);
-    font-size: 1.2em;
+    font-size: 2em;
 `
-
-/*  
-  .field {
+export const LoginField = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,80 +31,65 @@ export const LoginTitle = styled.h2`
     padding: 0.6em;
     border: none;
     outline: none;
-    color: white;
-    background-color: #171717;
+    color: var(--color-variant-5);
+    background-color: var(--color-variant-1);
     box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-  }
-  
-  .input-icon {
-    height: 1.3em;
-    width: 1.3em;
-    fill: white;
-  }
-  
-  .input-field {
-    background: none;
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #d3d3d3;
-  }
-  
-  .form .btn {
+    
+    svg {
+        height: 1.3em;
+        width: 1.3em;
+        fill: var(--color-variant-5);
+    }
+
+
+    input {
+        background: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        color: var(--color-variant-5);
+    }
+
+`
+export const LoginButtons = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 2.5em;
-  }
-  
-  .button1 {
-    padding: 0.5em;
-    padding-left: 1.1em;
+    margin-bottom: 3em;
+`
+export const LoginButtonNormal = styled.button`
+    padding: 0.5em 1.1em;
     padding-right: 1.1em;
     border-radius: 5px;
-    margin-right: 0.5em;
+    margin: 0.5em;
+    width: 40%;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-  }
-  
-  .button1:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  .button2 {
-    padding: 0.5em;
-    padding-left: 2.3em;
-    padding-right: 2.3em;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-  }
-  
-  .button2:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  .button3 {
+    background-color: var(--color-variant-2);
+    color: var(--color-variant-3);
+    
+    &:hover {
+        background-color: var(--color-variant-5);
+        color: var(--color-variant-3);
+    }
+    
+`
+export const LoginButtonWarm = styled.button`
+    width: 84%;
     margin-bottom: 3em;
     padding: 0.5em;
     border-radius: 5px;
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-  }
+    background-color: var(--color-variant-2);
+    color: var(--color-variant-3);
   
-  .button3:hover {
-    background-color: red;
-    color: white;
-  }
-*/
+    &:hover {
+        background-color: var(--color-variant-4);
+        color: var(--color-variant-5);
+    }
+`
