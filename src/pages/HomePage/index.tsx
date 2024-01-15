@@ -1,7 +1,7 @@
-import LoginPage from "./LoginPage";
+import LoginPage from "../LoginPage";
 import Logout from 'components/Logout/Logout';
 
-function Home() {
+function HomePage() {
     const user = localStorage.getItem('token');
 
     function getHomePage() {
@@ -19,4 +19,4 @@ function Home() {
      );
 }
 
-export default Home;
+export default HomePage;
