@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LoginContainer, LoginTitle } from "./stlyle";
 
 
 function Login() {
@@ -9,14 +10,17 @@ function Login() {
         window.location.reload()
     }
 
-    return (<div>
-        <input type="text" placeholder="login"
-            onChange={event => setUserName(event.target.value)} />
-        <input type="password" placeholder="senha" />
-        <button
-            onClick={login}
-        >Entrar</button>
-    </div>);
+    return (
+        <LoginContainer>
+            <LoginTitle>Login</LoginTitle>
+            <input type="text" placeholder="login"
+                onChange={event => setUserName(event.target.value)} />
+            <input type="password" placeholder="senha" />
+            <button
+                onClick={login}
+            >Entrar</button>
+        </LoginContainer>
+    );
 }
 
 export default Login;

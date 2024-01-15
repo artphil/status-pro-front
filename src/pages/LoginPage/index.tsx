@@ -1,13 +1,15 @@
 import Login from "components/Login";
 
-import { Content, Main } from "./style";
+import { ContentLeft, ContentRight, Main } from "./style";
 
 
 function LoginPage() {
     return (
         <Main>
-            <Content></Content>
-            <Login />
+            <ContentLeft></ContentLeft>
+            <ContentRight>
+                <Login />
+            </ContentRight>
         </Main>
     );
 }
