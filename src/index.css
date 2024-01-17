@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Handlee&family=Salsa&display=swap');
 
+:root {
+  --color-variant-1: #16BAC5;
+  --color-variant-2: #385357;
+  --color-variant-3: #F1E9DB;
+  --color-variant-4: #D36135;
+  --color-variant-5: #170312;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Handlee', cursive;
