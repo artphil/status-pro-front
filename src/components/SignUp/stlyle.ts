@@ -5,16 +5,10 @@ export const LoginContainer = styled.form`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0.04em 2em;
+    padding: 0 2rem;
     background-color: var(--color-variant-1);
     border-radius: 25px;
     box-shadow: inset -2px -5px 20px rgb(5, 5, 5);
-    transition: .4s ease-in-out;
-
-    &:hover {
-        transform: scale(1.05);
-        border: 1px solid black;
-    }
 `
 
 export const LoginTitle = styled.h2`
