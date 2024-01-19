@@ -7,7 +7,7 @@ import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
 import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
 
 
-function Login() {
+function SignUp() {
     const [userName, setUserName] = useState("");
 
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Login() {
 
     return (
         <LoginContainer>
-            <LoginTitle>Login</LoginTitle>
+            <LoginTitle>Cadastro</LoginTitle>
             <LoginField>
                 <EmailIco />
 
@@ -32,11 +32,11 @@ function Login() {
             </LoginField>
             <LoginButtons>
                 <LoginButtonNormal onClick={login} >Entrar</LoginButtonNormal>
-                <LoginButtonNormal onClick={() => navigate('/signup')} >Cadastro</LoginButtonNormal>
+                <LoginButtonNormal onClick={() => alert('Serviço não implementado')} >Cadastro</LoginButtonNormal>
                 <LoginButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</LoginButtonWarm>
             </LoginButtons>
         </LoginContainer>
     );
 }
 
-export default Login;
+export default SignUp;
