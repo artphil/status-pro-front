@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
 import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
 
 import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
-import { useNavigate } from "react-router";
 
 
 function Login() {
