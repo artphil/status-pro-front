@@ -8,7 +8,7 @@ export const Main = styled.main`
 `
 
 export const ContentLeft = styled.section`
-    background-color: var(--color-variant-2);
+    background-color: ${props => props.theme.color.variant2.main};
     width: 60%;
     border-radius: 0 50px 50px 0;
 `
