@@ -6,7 +6,7 @@ export const LoginContainer = styled.form`
     flex-direction: column;
     gap: 10px;
     padding: 0 2rem;
-    background-color: var(--color-variant-1);
+    background-color:  ${props => props.theme.color.variant1.main};
     border-radius: 25px;
     box-shadow: inset -2px -5px 20px rgb(5, 5, 5);
 `
@@ -26,14 +26,14 @@ export const LoginField = styled.div`
     padding: 0.6em;
     border: none;
     outline: none;
-    color: var(--color-variant-5);
-    background-color: var(--color-variant-1);
+    color: ${props => props.theme.color.variant1.contrastText};
+    background-color: ${props => props.theme.color.variant1.main};
     box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
     
     svg {
         height: 1.3em;
         width: 1.3em;
-        fill: var(--color-variant-5);
+        fill: ${props => props.theme.color.variant5.main};
     }
 
 
@@ -42,7 +42,7 @@ export const LoginField = styled.div`
         border: none;
         outline: none;
         width: 100%;
-        color: var(--color-variant-5);
+        color: ${props => props.theme.color.variant1.contrastText};
     }
 
 `
@@ -63,12 +63,12 @@ export const LoginButtonNormal = styled.button`
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: var(--color-variant-2);
-    color: var(--color-variant-3);
+    background-color: ${props => props.theme.color.variant2.main};
+    color: ${props => props.theme.color.variant2.contrastText};
     
     &:hover {
-        background-color: var(--color-variant-5);
-        color: var(--color-variant-3);
+        background-color: ${props => props.theme.color.variant5.main};
+        color: ${props => props.theme.color.variant5.contrastText};
     }
     
 `
@@ -80,11 +80,11 @@ export const LoginButtonWarm = styled.button`
     border: none;
     outline: none;
     transition: .4s ease-in-out;
-    background-color: var(--color-variant-2);
-    color: var(--color-variant-3);
+    background-color: ${props => props.theme.color.variant2.main};
+        color: ${props => props.theme.color.variant2.contrastText};
   
     &:hover {
-        background-color: var(--color-variant-4);
-        color: var(--color-variant-5);
+        background-color: ${props => props.theme.color.variant4.main};
+        color: ${props => props.theme.color.variant4.contrastText};
     }
 `
