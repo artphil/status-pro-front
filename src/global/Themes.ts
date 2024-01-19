@@ -1,13 +1,25 @@
 export const Theme = {
     color: {
-        background: "#141827",
+        background: "#F1F1F1",
         variant1: {
-            main: "#fffae3",
-            contrastText: "#c1d9d0",
+            main: "#16BAC5",
+            contrastText: "#ffffff",
         },
         variant2: {
-            main: "#736681",
-            contrastText: "#62455b",
+            main: "#385357",
+            contrastText: "#ffffff",
+        },
+        variant3: {
+            main: "#F1E9DB",
+            contrastText: "#000000",
+        },
+        variant4: {
+            main: "#D36135",
+            contrastText: "#ffffff",
+        },
+        variant5: {
+            main: "#170312",
+            contrastText: "#ffffff",
         },
     },
 
@@ -24,16 +36,30 @@ export const Theme = {
     },
 };
 
-export const DarkTheme = {
+export type ITheme = typeof Theme
+
+export const DarkTheme: ITheme = {
     color: {
-        background: "#141827",
+        background: "#050505",
         variant1: {
-            main: "#fffae3",
-            contrastText: "#c1d9d0",
+            main: "#16BAC5",
+            contrastText: "#ffffff",
         },
         variant2: {
-            main: "#736681",
-            contrastText: "#62455b",
+            main: "#385357",
+            contrastText: "#ffffff",
+        },
+        variant3: {
+            main: "#F1E9DB",
+            contrastText: "#000000",
+        },
+        variant4: {
+            main: "#D36135",
+            contrastText: "#ffffff",
+        },
+        variant5: {
+            main: "#170312",
+            contrastText: "#ffffff",
         },
     },
 
