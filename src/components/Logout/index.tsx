@@ -3,11 +3,11 @@ function Logout() {
         localStorage.removeItem('token')
         window.location.reload()
     }
-    return ( 
+    return (
         <button
-        onClick={logout}
+            onClick={logout}
         >Logout</button>
-     );
+    );
 }
 
 export default Logout;

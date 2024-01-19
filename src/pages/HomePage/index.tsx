@@ -1,22 +1,23 @@
-import LoginPage from "../LoginPage";
-import Logout from 'components/Logout/Logout';
+import { useLayoutEffect } from "react";
+import { useNavigate } from "react-router";
+
+import Logout from 'components/Logout';
 
 function HomePage() {
-    const user = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    const navigate = useNavigate();
+    console.log('token', token);
 
-    function getHomePage() {
-        return (
-            user? 
-            <div>Usuario logado 
-                <Logout></Logout></div>: <LoginPage/> 
-            )
-    }
-    return ( 
-        <>
-            {getHomePage()}
+    useLayoutEffect(() => {
+        if (!token) navigate('login');
+    }, []);
 
-        </>
-     );
+    return (
+        <div>
+            Usuario logado
+            <Logout></Logout>
+        </div>
+    );
 }
 
 export default HomePage;
