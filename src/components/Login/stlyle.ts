@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 
 export const LoginContainer = styled.form`
@@ -14,14 +14,14 @@ export const LoginContainer = styled.form`
         transform: scale(1.05);
         border: 1px solid black;
     }
-`
+`;
 
 export const LoginTitle = styled.h2`
     text-align: center;
     margin: 2em;
     color: rgb(255, 255, 255);
     font-size: 2em;
-`
+`;
 export const LoginField = styled.div`
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@ export const LoginField = styled.div`
         color: ${props => props.theme.color.variant1.contrastText};
     }
 
-`
+`;
 export const LoginButtons = styled.div`
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@ export const LoginButtons = styled.div`
     flex-wrap: wrap;
     margin-top: 2.5em;
     margin-bottom: 3em;
-`
+`;
 export const LoginButtonNormal = styled.button`
     padding: 0.5em 1.1em;
     padding-right: 1.1em;
@@ -76,7 +76,7 @@ export const LoginButtonNormal = styled.button`
         color: ${props => props.theme.color.variant5.contrastText};
     }
     
-`
+`;
 export const LoginButtonWarm = styled.button`
     width: 84%;
     margin-bottom: 3em;
@@ -92,4 +92,4 @@ export const LoginButtonWarm = styled.button`
         background-color: ${props => props.theme.color.variant4.main};
         color: ${props => props.theme.color.variant4.contrastText};
     }
-`
+`;

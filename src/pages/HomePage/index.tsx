@@ -1,24 +1,24 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect } from 'react';
 
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
 
 import Logout from 'components/Logout';
 
 function HomePage() {
-    const token = localStorage.getItem('token');
-    const navigate = useNavigate();
-    console.log('token', token);
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+  console.log('token', token);
 
-    useLayoutEffect(() => {
-        if (!token) navigate('login');
-    }, []);
+  useLayoutEffect(() => {
+    if (!token) navigate('login');
+  }, []);
 
-    return (
-        <div>
+  return (
+    <div>
             Usuario logado
-            <Logout></Logout>
-        </div>
-    );
+      <Logout></Logout>
+    </div>
+  );
 }
 
 export default HomePage;
