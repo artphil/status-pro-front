@@ -93,3 +93,9 @@ export const LoginButtonWarm = styled.button`
         color: ${props => props.theme.color.variant4.contrastText};
     }
 `;
+
+export const ErrorMessage = styled.p`
+    font-size: ${props => props.theme.font.small};
+    color: ${props => props.theme.color.variant4.main};
+    font-weight: 700;
+`;
