@@ -5,7 +5,7 @@ import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
 import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
 import { ReactComponent as UserIco } from 'assets/icons/user.svg';
 
-import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from './stlyle';
+import { LoginButtonNormal, LoginButtons, LoginContainer, LoginField, LoginTitle } from './stlyle';
 
 
 function SignUp() {
