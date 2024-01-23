@@ -1,31 +1,31 @@
 export const Theme = {
   color: {
-    background: '#F1F1F1',
+    background: "#F1F1F1",
     variant1: {
-      main: '#16BAC5',
-      contrastText: '#ffffff',
+      main: "#16BAC5",
+      contrastText: "#ffffff",
     },
     variant2: {
-      main: '#385357',
-      contrastText: '#ffffff',
+      main: "#385357",
+      contrastText: "#ffffff",
     },
     variant3: {
-      main: '#F1E9DB',
-      contrastText: '#000000',
+      main: "#F1E9DB",
+      contrastText: "#000000",
     },
     variant4: {
-      main: '#D36135',
-      contrastText: '#ffffff',
+      main: "#D36135",
+      contrastText: "#ffffff",
     },
     variant5: {
-      main: '#170312',
-      contrastText: '#ffffff',
+      main: "#170312",
+      contrastText: "#ffffff",
     },
   },
 
   border: {
-    radius: '15px',
-    style: '2px solid #736681',
+    radius: "15px",
+    style: "2px solid #736681",
   },
 
   font: {
@@ -40,32 +40,32 @@ export type ThemeType = typeof Theme
 
 export const DarkTheme: ThemeType = {
   color: {
-    background: '#050505',
+    background: "#050505",
     variant1: {
-      main: '#16BAC5',
-      contrastText: '#ffffff',
+      main: "#16BAC5",
+      contrastText: "#ffffff",
     },
     variant2: {
-      main: '#385357',
-      contrastText: '#ffffff',
+      main: "#385357",
+      contrastText: "#ffffff",
     },
     variant3: {
-      main: '#F1E9DB',
-      contrastText: '#000000',
+      main: "#F1E9DB",
+      contrastText: "#000000",
     },
     variant4: {
-      main: '#D36135',
-      contrastText: '#ffffff',
+      main: "#D36135",
+      contrastText: "#ffffff",
     },
     variant5: {
-      main: '#170312',
-      contrastText: '#ffffff',
+      main: "#170312",
+      contrastText: "#ffffff",
     },
   },
 
   border: {
-    radius: '15px',
-    style: '2px solid #736681',
+    radius: "15px",
+    style: "2px solid #736681",
   },
 
   font: {
