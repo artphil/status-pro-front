@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router";
 
+import { useSignUp } from "hooks/userHooks";
+
 import { ReactComponent as EmailIco } from "assets/icons/email.svg";
 import { ReactComponent as PassIco } from "assets/icons/pass.svg";
 import { ReactComponent as UserIco } from "assets/icons/user.svg";
 
 import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle, ErrorMessage } from "../Login/stlyle";
-import { useSignUp } from "hooks/userHooks";
 
 
 function SignUp() {
