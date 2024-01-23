@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
