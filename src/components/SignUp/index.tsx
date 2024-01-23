@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
-import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
-import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
-import { ReactComponent as UserIco } from 'assets/icons/user.svg';
+import { ReactComponent as EmailIco } from "assets/icons/email.svg";
+import { ReactComponent as PassIco } from "assets/icons/pass.svg";
+import { ReactComponent as UserIco } from "assets/icons/user.svg";
 
-import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from './stlyle';
+import { LoginButtonNormal, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
 
 
 function SignUp() {
-  const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState("");
 
   const navigate = useNavigate();
 
   function login() {
-    localStorage.setItem('token', userName);
-    navigate('/');
+    localStorage.setItem("token", userName);
+    navigate("/");
   }
 
   return (
@@ -41,7 +41,7 @@ function SignUp() {
       </LoginField>
       <LoginButtons>
         <LoginButtonNormal onClick={login} >Enviar</LoginButtonNormal>
-        <LoginButtonNormal onClick={() => navigate('/login')} >Fazer login</LoginButtonNormal>
+        <LoginButtonNormal onClick={() => navigate("/login")} >Fazer login</LoginButtonNormal>
       </LoginButtons>
     </LoginContainer>
   );
