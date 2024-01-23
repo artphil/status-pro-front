@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router";
 
+import { useLogin } from "hooks/userHooks";
+
 import { ReactComponent as EmailIco } from "assets/icons/email.svg";
 import { ReactComponent as PassIco } from "assets/icons/pass.svg";
 
-import { ErrorMessage, LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
-import { useLogin } from "hooks/userHooks";
+import { ErrorMessage, ButtonNormal, ButtonWarm, ButtonGroup, FormContainer, InputField, FormTitle } from "./stlyle";
 
 
 function Login() {
@@ -19,28 +20,28 @@ function Login() {
   }
 
   return (
-    <LoginContainer onSubmit={event => submit(event)}>
-      <LoginTitle>Login</LoginTitle>
-      <LoginField>
+    <FormContainer onSubmit={event => submit(event)}>
+      <FormTitle>Login</FormTitle>
+      <InputField>
         <EmailIco />
 
         <input type="text" placeholder="Usuário" {...register("username")}
         />
-      </LoginField>
+      </InputField>
       <ErrorMessage>{errors.username?.message ?? ""}</ErrorMessage>
 
-      <LoginField>
+      <InputField>
         <PassIco />
         <input type="password" placeholder="Senha" {...register("password")} />
-      </LoginField>
+      </InputField>
       <ErrorMessage>{errors.password?.message ?? ""}</ErrorMessage>
 
-      <LoginButtons>
-        <LoginButtonNormal type='submit'>Entrar</LoginButtonNormal>
-        <LoginButtonNormal onClick={() => navigate("/signup")} >Cadastro</LoginButtonNormal>
-        <LoginButtonWarm onClick={() => alert("Serviço não implementado")} >Recuperar senha</LoginButtonWarm>
-      </LoginButtons>
-    </LoginContainer>
+      <ButtonGroup>
+        <ButtonNormal type='submit'>Entrar</ButtonNormal>
+        <ButtonNormal onClick={() => navigate("/signup")} >Cadastro</ButtonNormal>
+        <ButtonWarm onClick={() => alert("Serviço não implementado")} >Recuperar senha</ButtonWarm>
+      </ButtonGroup>
+    </FormContainer>
   );
 }
 
