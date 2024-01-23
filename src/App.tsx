@@ -1,6 +1,6 @@
-import Router from 'Router';
-import { ThemeProvider } from 'styled-components';
-import { Theme } from 'global/Themes';
+import Router from "Router";
+import { ThemeProvider } from "styled-components";
+import { Theme } from "global/Themes";
 
 function App() {
   return (
