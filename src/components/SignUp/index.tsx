@@ -5,7 +5,7 @@ import { ReactComponent as EmailIco } from "assets/icons/email.svg";
 import { ReactComponent as PassIco } from "assets/icons/pass.svg";
 import { ReactComponent as UserIco } from "assets/icons/user.svg";
 
-import { LoginButtonNormal, LoginButtons, LoginContainer, LoginField, LoginTitle } from "./stlyle";
+import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle } from "../Login/stlyle";
 
 
 function SignUp() {
@@ -19,31 +19,31 @@ function SignUp() {
   }
 
   return (
-    <LoginContainer>
-      <LoginTitle>Cadastro</LoginTitle>
-      <LoginField>
+    <FormContainer>
+      <FormTitle>Cadastro</FormTitle>
+      <InputField>
         <UserIco />
         <input type="text" placeholder="Nome"
           onChange={event => setUserName(event.target.value)} />
-      </LoginField>
-      <LoginField>
+      </InputField>
+      <InputField>
         <EmailIco />
         <input type="text" placeholder="Email"
           onChange={event => setUserName(event.target.value)} />
-      </LoginField>
-      <LoginField>
+      </InputField>
+      <InputField>
         <PassIco />
         <input type="password" placeholder="Senha" />
-      </LoginField>
-      <LoginField>
+      </InputField>
+      <InputField>
         <PassIco />
         <input type="password" placeholder="Repetir a senha" />
-      </LoginField>
-      <LoginButtons>
-        <LoginButtonNormal onClick={login} >Enviar</LoginButtonNormal>
-        <LoginButtonNormal onClick={() => navigate("/login")} >Fazer login</LoginButtonNormal>
-      </LoginButtons>
-    </LoginContainer>
+      </InputField>
+      <ButtonGroup>
+        <ButtonNormal onClick={login} >Enviar</ButtonNormal>
+        <ButtonNormal onClick={() => navigate("/login")} >Fazer login</ButtonNormal>
+      </ButtonGroup>
+    </FormContainer>
   );
 }
 
