@@ -3,6 +3,7 @@ import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router";
 
 import Logout from "components/Logout";
+import DefaultPage from "components/DefaultPage";
 
 function HomePage() {
   const token = localStorage.getItem("token");
@@ -13,10 +14,10 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
+    <DefaultPage>
       Usuario logado
       <Logout></Logout>
-    </div>
+    </DefaultPage>
   );
 }
 
