@@ -29,10 +29,10 @@ export const Theme = {
   },
 
   font: {
-    small: '0.8rem',
-    default: '1rem',
-    big: '2rem',
-    bigger: '3rem',
+    small: "0.8rem",
+    default: "1rem",
+    big: "2rem",
+    bigger: "3rem",
   },
 };
 
@@ -69,9 +69,9 @@ export const DarkTheme: ThemeType = {
   },
 
   font: {
-    small: '0.8rem',
-    default: '1rem',
-    big: '2rem',
-    bigger: '3rem',
+    small: "0.8rem",
+    default: "1rem",
+    big: "2rem",
+    bigger: "3rem",
   },
 };
