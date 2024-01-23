@@ -1,18 +1,18 @@
-import Login from 'components/Login';
-
 import { ContentLeft, ContentRight, Main } from './style';
 
+import SignUp from 'components/SignUp';
 
-function LoginPage() {
+
+function SignUpPage() {
   return (
     <Main>
       <ContentLeft></ContentLeft>
       <ContentRight>
-        <Login />
+        <SignUp />
       </ContentRight>
     </Main>
   );
 }
 
-export default LoginPage;
+export default SignUpPage;
 
