@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
 
-import { useLogin } from "hooks/userHooks";
+import { useLogin } from 'hooks/userHooks';
 
-import { ReactComponent as EmailIco } from "assets/icons/email.svg";
-import { ReactComponent as PassIco } from "assets/icons/pass.svg";
+import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
+import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
 
-import { ErrorMessage, ButtonNormal, ButtonWarm, ButtonGroup, FormContainer, InputField, FormTitle } from "./stlyle";
+import { ErrorMessage, ButtonNormal, ButtonWarm, ButtonGroup, FormContainer, InputField, FormTitle } from './stlyle';
 
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     onSubmit();
-    navigate("/");
+    navigate('/');
   }
 
   return (
@@ -25,21 +25,21 @@ function Login() {
       <InputField>
         <EmailIco />
 
-        <input type="text" placeholder="Usuário" {...register("username")}
+        <input type="text" placeholder="Usuário" {...register('username')}
         />
       </InputField>
-      <ErrorMessage>{errors.username?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
 
       <InputField>
         <PassIco />
-        <input type="password" placeholder="Senha" {...register("password")} />
+        <input type="password" placeholder="Senha" {...register('password')} />
       </InputField>
-      <ErrorMessage>{errors.password?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.password?.message ?? ''}</ErrorMessage>
 
       <ButtonGroup>
         <ButtonNormal type='submit'>Entrar</ButtonNormal>
-        <ButtonNormal onClick={() => navigate("/signup")} >Cadastro</ButtonNormal>
-        <ButtonWarm onClick={() => alert("Serviço não implementado")} >Recuperar senha</ButtonWarm>
+        <ButtonNormal onClick={() => navigate('/signup')} >Cadastro</ButtonNormal>
+        <ButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</ButtonWarm>
       </ButtonGroup>
     </FormContainer>
   );

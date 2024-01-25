@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router';
 
-import { useSignUp } from "hooks/userHooks";
+import { useSignUp } from 'hooks/userHooks';
 
-import { ReactComponent as EmailIco } from "assets/icons/email.svg";
-import { ReactComponent as PassIco } from "assets/icons/pass.svg";
-import { ReactComponent as UserIco } from "assets/icons/user.svg";
+import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
+import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
+import { ReactComponent as UserIco } from 'assets/icons/user.svg';
 
-import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle, ErrorMessage } from "../Login/stlyle";
+import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle, ErrorMessage } from '../Login/stlyle';
 
 
 function SignUp() {
@@ -17,7 +17,7 @@ function SignUp() {
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     onSubmit();
-    navigate("/");
+    navigate('/');
   }
 
   return (
@@ -26,31 +26,31 @@ function SignUp() {
 
       <InputField>
         <UserIco />
-        <input type="text" placeholder="Nome" {...register("name")} />
+        <input type="text" placeholder="Nome" {...register('name')} />
       </InputField>
-      <ErrorMessage>{errors.name?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.name?.message ?? ''}</ErrorMessage>
 
       <InputField>
         <EmailIco />
-        <input type="text" placeholder="Email" {...register("username")} />
+        <input type="text" placeholder="Email" {...register('username')} />
       </InputField>
-      <ErrorMessage>{errors.username?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
 
       <InputField>
         <PassIco />
-        <input type="password" placeholder="Senha" {...register("password1")} />
+        <input type="password" placeholder="Senha" {...register('password1')} />
       </InputField>
-      <ErrorMessage>{errors.password1?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.password1?.message ?? ''}</ErrorMessage>
 
       <InputField>
         <PassIco />
-        <input type="password" placeholder="Repetir a senha" {...register("password2")} />
+        <input type="password" placeholder="Repetir a senha" {...register('password2')} />
       </InputField>
-      <ErrorMessage>{errors.password2?.message ?? ""}</ErrorMessage>
+      <ErrorMessage>{errors.password2?.message ?? ''}</ErrorMessage>
 
       <ButtonGroup>
         <ButtonNormal type="submit" >Enviar</ButtonNormal>
-        <ButtonNormal onClick={() => navigate("/login")} >Fazer login</ButtonNormal>
+        <ButtonNormal onClick={() => navigate('/login')} >Fazer login</ButtonNormal>
       </ButtonGroup>
     </FormContainer>
   );

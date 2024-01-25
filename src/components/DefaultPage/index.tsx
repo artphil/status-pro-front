@@ -1,9 +1,9 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState } from 'react';
 
-import UserIcon from "assets/icons/email.svg";
-import Logout from "components/Logout";
+import UserIcon from 'assets/icons/email.svg';
+import Logout from 'components/Logout';
 
-import { Footer, Header, Main, MenuButton, MenuContainer, MenuItem } from "./styles";
+import { Footer, Header, Main, MenuButton, MenuContainer, MenuItem } from './styles';
 
 
 function UserMenu() {
@@ -28,7 +28,7 @@ function DefaultPage(props: Props) {
       <Header>
         Default Page
         <MenuButton
-          className={menuOpened ? "active" : ""}
+          className={menuOpened ? 'active' : ''}
           onClick={() => setMenuOpened(!menuOpened)}
         // onBlur={() => setMenuOpened(false)}
         ><img src={UserIcon} alt="menu" />

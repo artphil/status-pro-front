@@ -1,6 +1,6 @@
-import { ContentLeft, ContentRight, Main } from "./style";
+import { ContentLeft, ContentRight, Main } from './style';
 
-import SignUp from "components/SignUp";
+import SignUp from 'components/SignUp';
 
 
 function SignUpPage() {
