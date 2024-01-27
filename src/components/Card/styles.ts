@@ -15,29 +15,21 @@ export const CardContainer = styled.div`
   animation: move-up6 3s ease-in infinite alternate-reverse;
 
   &.gold{
-    background: linear-gradient(153deg, rgba(218,165,32,1) 0%,
-                                      rgba(184,134,13,1) 12%, 
-                                      rgba(208,185,127,1) 41%, 
-                                      rgba(218,165,32,1) 100%);
+    background: linear-gradient(153deg, #C18700, #D8A309, #EABF14, #EAD355, #F7F18B, #EABF14, #EAD355, #F7F18B);  
   }
 
   &.silver {
-    background: linear-gradient(153deg, rgba(192,192,192,1) 0%,
-                                        rgba(161,160,158,1) 12%, 
-                                        rgba(231,229,227,1) 41%, 
-                                        rgba(192,192,192,1) 100%);
+    background: linear-gradient(153deg, #3F3F3D, #63645D, #858885, #A7A9A8, #C8CAC7, #858885, #A7A9A8, #C8CAC7);  
   }
 
-  &.cooper {
-    background: linear-gradient(153deg, rgba(123,76,30,1) 0%,
-                                    rgba(205,106,9,1) 12%, 
-                                    rgba(205,127,50,1) 41%, 
-                                    rgba(123,76,30,1) 100%);
+  &.bronze {
+    background: linear-gradient(153deg, #3E2B01, #503B00, #836600, #C1A132, #FDF198, #836600, #C1A132, #FDF198);  
   }
 
 
   &:hover{
-    transform: scale(1.04) rotate(1deg);
+    transform: scale(1.2);
+    animation: none;
   }
   @keyframes move-up6 {
   to {
@@ -107,13 +99,12 @@ export const TopoTitle = styled.div`
   width: 95%;
   height: 25px;
   border-radius: 5px;
-  text-align: left;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   &>span{
+    margin-left: 1rem;
     font-family: 'Poppins', sans-serif;
-    margin-left: 15px;
   }
 `;
 
