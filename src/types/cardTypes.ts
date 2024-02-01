@@ -9,4 +9,5 @@ export type CardType = {
   name: string,
   image: string,
   status: CardSattusType[],
+  description: string
 }
