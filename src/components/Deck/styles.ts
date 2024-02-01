@@ -136,6 +136,7 @@ export const CardDescription = styled.div`
 export const CardClose = styled.button`
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
   background-color: ${props => props.theme.color.variant4.main};
   color: ${props => props.theme.color.variant4.contrastText};
   border: none;
