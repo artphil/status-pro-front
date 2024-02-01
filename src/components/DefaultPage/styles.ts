@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 export const Main = styled.main`
   display: flex;
@@ -17,11 +19,15 @@ export const Header = styled.header`
   height: 3rem;
   background-color: ${props => props.theme.color.variant1.main};
   color: ${props => props.theme.color.variant1.contrastText};
+
+  @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+    padding: 0.5rem ${props => props.theme.device.mobile.padding};
+  }
 `;
 
 export const MenuButton = styled.button`
   position: relative;
-  z-index: 1;
+  z-index: 2;
   top: 1rem;
   width: 4rem;
   height: 4rem;
@@ -32,8 +38,14 @@ export const MenuButton = styled.button`
   transition: 0.5s;
   
   &.active {
+    z-index: 2;
     scale: 1.4;
     translate: 0 1rem;
+
+    @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+      scale: 1.1;
+      translate: -0.5rem 0.5rem;
+    }
   }
 
   img {
@@ -47,9 +59,16 @@ export const Footer = styled.footer`
   height: 2rem;
   background-color: ${props => props.theme.color.background};
   text-align: center;
+  
+  @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+    padding: 0.5rem ${props => props.theme.device.mobile.padding};
+  }
 `;
 
-export const MenuContainer = styled.ul`
+export const MenuContainer = styled.div`
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   position: absolute;
   top: 100%;
@@ -59,14 +78,26 @@ export const MenuContainer = styled.ul`
   padding: 3rem 0;
   list-style-type: none;
   border-radius: 1rem 0 0 1rem;
+
+  @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+  }
 `;
 
-export const MenuItem = styled.li`
+export const MenuLink = styled(Link)`
   width: 100%;
   padding: 1rem 2rem;
   color: ${props => props.theme.color.variant2.contrastText};
   font-size: ${props => props.theme.font.default};
   font-weight: 700;
+  text-decoration: none;
+
+  &.logout {
+    margin-top: 3rem;
+    background-color: ${props => props.theme.color.variant4.main};
+    color: ${props => props.theme.color.variant4.contrastText};
+  }
 
   &:hover {
     background-color: ${props => props.theme.color.variant2.main};

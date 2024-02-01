@@ -11,6 +11,10 @@ export const ContentLeft = styled.section`
     background-color: ${props => props.theme.color.variant2.main};
     width: 60%;
     border-radius: 0 50px 50px 0;
+
+    @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+        display: none;
+    }
 `;
 
 export const ContentRight = styled.section`
@@ -19,5 +23,9 @@ export const ContentRight = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
+            width: 100%;
+    }
 `;
 

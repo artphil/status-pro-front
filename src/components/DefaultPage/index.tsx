@@ -3,14 +3,14 @@ import { ReactNode, useState } from 'react';
 import UserIcon from 'assets/icons/email.svg';
 import Logout from 'components/Logout';
 
-import { Footer, Header, Main, MenuButton, MenuContainer, MenuItem } from './styles';
+import { Footer, Header, Main, MenuButton, MenuContainer, MenuLink } from './styles';
 
 
 function UserMenu() {
   return (
     <MenuContainer>
-      <MenuItem>op</MenuItem>
-      <MenuItem><Logout /></MenuItem>
+      <MenuLink to={'#'}>Perfil</MenuLink>
+      <MenuLink to={'/logout'} className='logout'>Logout</MenuLink>
     </MenuContainer>
   );
 }
@@ -26,7 +26,7 @@ function DefaultPage(props: Props) {
   return (
     <Main>
       <Header>
-        Default Page
+        <h2>Status Pro</h2>
         <MenuButton
           className={menuOpened ? 'active' : ''}
           onClick={() => setMenuOpened(!menuOpened)}

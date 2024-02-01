@@ -37,7 +37,12 @@ export const Theme = {
 
   device: {
     computer: {
-      padding: '6rem'
+      padding: '6rem',
+      size: '1700px',
+    },
+    mobile: {
+      padding: '1rem',
+      size: '700px',
     },
   },
 };
@@ -83,8 +88,12 @@ export const DarkTheme: ThemeType = {
 
   device: {
     computer: {
-      padding: '6rem'
+      padding: '6rem',
+      size: '1700px',
+    },
+    mobile: {
+      padding: '1rem',
+      size: '700px',
     },
   },
-
 };
