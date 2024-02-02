@@ -1,39 +1,63 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import apiAuth from 'services/apiAuth';
 
 import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
 import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
 
-import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from './stlyle';
+import { LoginButtonNormal, LoginButtons, LoginContainer, LoginField, LoginTitle, } from './stlyle';
+import { StyledLink } from 'components/SignUp/stlyle';
 
 
 function Login() {
-  const [userName, setUserName] = useState('');
-
+  const [form, setForm] = useState({email: '', password: ''});
   const navigate = useNavigate();
 
-  function login() {
-    localStorage.setItem('token', userName);
-    navigate('/');
+  function handleForm(e: any){
+    setForm({...form, [e.target.name]: e.target.value});
+  }
+
+  function handleSignUp(e: any){
+    e.preventDefault();
+
+    apiAuth.signIn(form)
+      .then( res => {
+        localStorage.setItem('token', 'nome qualquer');
+        navigate('/');
+      })
+      .catch( err => {
+        alert(err.response.data);
+      });
   }
 
   return (
-    <LoginContainer>
+    <LoginContainer onSubmit={handleSignUp}>
       <LoginTitle>Login</LoginTitle>
       <LoginField>
         <EmailIco />
-
-        <input type="text" placeholder="Usuário"
-          onChange={event => setUserName(event.target.value)} />
+        <input 
+          name="email"
+          placeholder="Email"
+          type="email" 
+          required
+          value={form.email}
+          onChange={handleForm} />
       </LoginField>
       <LoginField>
         <PassIco />
-        <input type="password" placeholder="Senha" />
+        <input 
+          name="password"
+          placeholder="Senha"
+          type="password" 
+          required
+          value={form.password}
+          onChange={handleForm}
+        />
       </LoginField>
       <LoginButtons>
-        <LoginButtonNormal onClick={login} >Entrar</LoginButtonNormal>
-        <LoginButtonNormal onClick={() => navigate('/signup')} >Cadastro</LoginButtonNormal>
-        <LoginButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</LoginButtonWarm>
+        <LoginButtonNormal>Entrar</LoginButtonNormal>
+        <StyledLink to='/login'>Já possui conta? Clique aqui para fazer login</StyledLink>
+        {/* <LoginButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</LoginButtonWarm> */}
       </LoginButtons>
     </LoginContainer>
   );

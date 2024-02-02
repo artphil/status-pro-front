@@ -1,13 +1,11 @@
 import { useLayoutEffect } from 'react';
-
 import { useNavigate } from 'react-router';
-
 import Logout from 'components/Logout';
 
 function HomePage() {
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
-  console.log('token', token);
+  console.log('token', token); 
 
   useLayoutEffect(() => {
     if (!token) navigate('login');
@@ -15,7 +13,7 @@ function HomePage() {
 
   return (
     <div>
-            Usuario logado
+        Usuario logado
       <Logout></Logout>
     </div>
   );

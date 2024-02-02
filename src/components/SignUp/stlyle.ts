@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 export const LoginContainer = styled.form`
@@ -86,5 +87,16 @@ export const LoginButtonWarm = styled.button`
     &:hover {
         background-color: ${props => props.theme.color.variant4.main};
         color: ${props => props.theme.color.variant4.contrastText};
+    }
+`;
+
+export const StyledLink = styled(Link)`
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: underline;
+    color: #FFF;
+    &:hover{
+        font-weight: 600;
     }
 `;
