@@ -1,15 +1,18 @@
-import { ContentLeft, ContentRight, Main } from './style';
-
+import Logo from 'components/Logo';
+import { ContentCenter, ContentRight, Main} from './style';
 import SignUp from 'components/SignUp';
-
 
 function SignUpPage() {
   return (
     <Main>
-      <ContentLeft></ContentLeft>
-      <ContentRight>
-        <SignUp />
-      </ContentRight>
+      <ContentCenter>
+        <ContentRight>
+          <Logo />
+          <SignUp />
+        </ContentRight>
+      </ContentCenter>
+      <h1>Criado por <a href='https://www.linkedin.com/in/artphil/' target='_blank'  rel='noreferrer'>Arthur Phillip</a> e <a href='https://www.linkedin.com/in/renato-ferreira-01/' target='_blank' rel='noreferrer'>Renato Ferreira</a>
+      </h1>
     </Main>
   );
 }

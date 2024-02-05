@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://api.render.com/deploy/srv-cmu2bbq1hbls73d5ljbg?key=XEAOzaMdDfA';
+const BASE_URL = 'https://statuspro-api.onrender.com';
 //const BASE_URL = 'http://localhost:5000';
 
 export type User = {

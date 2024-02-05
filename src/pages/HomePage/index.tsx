@@ -1,6 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router';
 import Logout from 'components/Logout';
+import { LobbyContainer } from './style';
 
 function HomePage() {
   const token = localStorage.getItem('token');
@@ -12,10 +13,10 @@ function HomePage() {
   }, []);
 
   return (
-    <div>
+    <LobbyContainer>
         Usuario logado
       <Logout></Logout>
-    </div>
+    </LobbyContainer>
   );
 }
 
