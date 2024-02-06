@@ -1,49 +1,58 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 
-import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
-import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
-import { ReactComponent as UserIco } from 'assets/icons/user.svg';
+import { useSignUp } from "hooks/userHooks";
 
-import { LoginButtonNormal, LoginButtonWarm, LoginButtons, LoginContainer, LoginField, LoginTitle } from './stlyle';
+import { ReactComponent as EmailIco } from "assets/icons/email.svg";
+import { ReactComponent as PassIco } from "assets/icons/pass.svg";
+import { ReactComponent as UserIco } from "assets/icons/user.svg";
+
+import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle, ErrorMessage } from "../Login/stlyle";
 
 
 function SignUp() {
-  const [userName, setUserName] = useState('');
+  const { onSubmit, errors, register } = useSignUp();
 
   const navigate = useNavigate();
 
-  function login() {
-    localStorage.setItem('token', userName);
-    navigate('/');
+  function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    onSubmit();
+    navigate("/");
   }
 
   return (
-    <LoginContainer>
-      <LoginTitle>Cadastro</LoginTitle>
-      <LoginField>
+    <FormContainer onSubmit={event => submit(event)}>
+      <FormTitle>Cadastro</FormTitle>
+
+      <InputField>
         <UserIco />
-        <input type="text" placeholder="Nome"
-          onChange={event => setUserName(event.target.value)} />
-      </LoginField>
-      <LoginField>
+        <input type="text" placeholder="Nome" {...register("name")} />
+      </InputField>
+      <ErrorMessage>{errors.name?.message ?? ""}</ErrorMessage>
+
+      <InputField>
         <EmailIco />
-        <input type="text" placeholder="Email"
-          onChange={event => setUserName(event.target.value)} />
-      </LoginField>
-      <LoginField>
+        <input type="text" placeholder="Email" {...register("username")} />
+      </InputField>
+      <ErrorMessage>{errors.username?.message ?? ""}</ErrorMessage>
+
+      <InputField>
         <PassIco />
-        <input type="password" placeholder="Senha" />
-      </LoginField>
-      <LoginField>
+        <input type="password" placeholder="Senha" {...register("password1")} />
+      </InputField>
+      <ErrorMessage>{errors.password1?.message ?? ""}</ErrorMessage>
+
+      <InputField>
         <PassIco />
-        <input type="password" placeholder="Repetir a senha" />
-      </LoginField>
-      <LoginButtons>
-        <LoginButtonNormal onClick={login} >Enviar</LoginButtonNormal>
-        <LoginButtonNormal onClick={() => navigate('/login')} >Fazer login</LoginButtonNormal>
-      </LoginButtons>
-    </LoginContainer>
+        <input type="password" placeholder="Repetir a senha" {...register("password2")} />
+      </InputField>
+      <ErrorMessage>{errors.password2?.message ?? ""}</ErrorMessage>
+
+      <ButtonGroup>
+        <ButtonNormal type="submit" >Enviar</ButtonNormal>
+        <ButtonNormal onClick={() => navigate("/login")} >Fazer login</ButtonNormal>
+      </ButtonGroup>
+    </FormContainer>
   );
 }
 
