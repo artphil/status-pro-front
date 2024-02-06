@@ -6,11 +6,18 @@ import { PulseLoader } from 'react-spinners';
 import { LoginButton, LoginContainer, LoginField, LoginTitle, Container, EmailIcon, UserIcon, PassIcon, StyledLink } from './style';
 
 function SignUp() {
+  const [form, setForm] = useState({
+    name: '',
+    nickname: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
 
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleForm(e: React.FormEvent<HTMLFormElement>) {
+  function handleForm(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
@@ -45,7 +52,7 @@ function SignUp() {
             placeholder="Nome"
             disabled={isLoading}
             value={form.name}
-            onChange={handleForm} />
+            onChange={e => handleForm} />
         </LoginField>
         <LoginField>
           <UserIcon />
