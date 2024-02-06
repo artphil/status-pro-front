@@ -14,6 +14,10 @@ const online = [
   'Edu',
 ];
 
+import { useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router';
+import Logout from 'components/Logout';
+import { LobbyContainer } from './style';
 
 function HomePage() {
   const token = localStorage.getItem('token');
