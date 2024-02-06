@@ -44,7 +44,7 @@ function Login() {
             required
             disabled={isLoading}
             value={form.email}
-            onChange={shandleForm} />
+            onChange={handleForm} />
         </LoginField>
         <LoginField>
           <PassIcon />

@@ -52,7 +52,7 @@ function SignUp() {
             placeholder="Nome"
             disabled={isLoading}
             value={form.name}
-            onChange={e => handleForm} />
+            onChange={handleForm} />
         </LoginField>
         <LoginField>
           <UserIcon />
