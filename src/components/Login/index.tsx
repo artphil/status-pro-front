@@ -6,16 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { useLogin } from 'hooks/userHooks';
 
-import { ReactComponent as EmailIco } from 'assets/icons/email.svg';
-import { ReactComponent as PassIco } from 'assets/icons/pass.svg';
-
-import { ErrorMessage, ButtonNormal, ButtonWarm, ButtonGroup, FormContainer, InputField, FormTitle } from './stlyle';
-
 
 function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+
+  const { onSubmit, register } = useLogin();
 
   function handleForm(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,14 +33,15 @@ function Login() {
         alert(err.response.data);
         setIsLoading(false);
       });
+  }
 
-    function submit(event: React.FormEvent<HTMLFormElement>) {
-      event.preventDefault();
-      onSubmit();
-      navigate('/');
-    }
+  function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    // onSubmit();
+    navigate('/');
+  }
 
-    return (
+  return (
     <Container>
       <LoginContainer onSubmit={handleSignIn}>
         <LoginTitle>Login</LoginTitle>
@@ -79,29 +77,29 @@ function Login() {
         <StyledLink to='/signup'>Sem conta? Clique aqui para cadastrar-se!</StyledLink>
       </LoginContainer>
     </Container>
-    <FormContainer onSubmit={event => submit(event)}>
-      <FormTitle>Login</FormTitle>
-      <InputField>
-        <EmailIco />
+  );
+}
 
-        <input type="text" placeholder="Usuário" {...register('username')}
-        />
-      </InputField>
-      <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
+// <FormContainer onSubmit={event => submit(event)}>
+//   <FormTitle>Login</FormTitle>
+//   <InputField>
+//     <EmailIco />
 
-      <InputField>
-        <PassIco />
-        <input type="password" placeholder="Senha" {...register('password')} />
-      </InputField>
-      <ErrorMessage>{errors.password?.message ?? ''}</ErrorMessage>
+//     <input type="text" placeholder="Usuário" {...register('username')}
+//     />
+//   </InputField>
+//   <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
 
-      <ButtonGroup>
-        <ButtonNormal type='submit'>Entrar</ButtonNormal>
-        <ButtonNormal onClick={() => navigate('/signup')} >Cadastro</ButtonNormal>
-        <ButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</ButtonWarm>
-      </ButtonGroup>
-    </FormContainer>
-    );
-  }
+//   <InputField>
+//     <PassIco />
+//     <input type="password" placeholder="Senha" {...register('password')} />
+//   </InputField>
+//   <ErrorMessage>{errors.password?.message ?? ''}</ErrorMessage>
 
-  export default Login;
+//   <ButtonGroup>
+//     <ButtonNormal type='submit'>Entrar</ButtonNormal>
+//     <ButtonNormal onClick={() => navigate('/signup')} >Cadastro</ButtonNormal>
+//     <ButtonWarm onClick={() => alert('Serviço não implementado')} >Recuperar senha</ButtonWarm>
+//   </ButtonGroup>
+// </FormContainer>
+export default Login;

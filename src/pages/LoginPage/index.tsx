@@ -1,9 +1,7 @@
-import Login from 'components/Login';
 import Logo from 'components/Logo';
 import { Main, ContentCenter, ContentRight } from 'pages/SignUpPage/style';
 import Login from 'components/Login';
 
-import { ContentLeft, ContentRight, Main } from './style';
 import { useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+
 import apiAuth from 'services/apiAuth';
 import { PulseLoader } from 'react-spinners';
 
 import { LoginButton, LoginContainer, LoginField, LoginTitle, Container, EmailIcon, UserIcon, PassIcon, StyledLink } from './style';
-import { ButtonNormal, ButtonGroup, FormContainer, InputField, FormTitle, ErrorMessage } from '../Login/stlyle';
 
 
 function SignUp() {
@@ -39,14 +39,15 @@ function SignUp() {
         alert(err.response.data);
         setIsLoading(false);
       });
+  }
 
-    function submit(event: React.FormEvent<HTMLFormElement>) {
-      event.preventDefault();
-      onSubmit();
-      navigate('/');
-    }
+  // function submit(event: React.FormEvent<HTMLFormElement>) {
+  //   event.preventDefault();
+  //   // onSubmit();
+  //   navigate('/');
+  // }
 
-    return (
+  return (
     <Container>
       <LoginContainer onSubmit={handleSignUp}>
         <LoginTitle>Cadastro</LoginTitle>
@@ -118,39 +119,39 @@ function SignUp() {
         <StyledLink to='/login'>Possui conta? Clique aqui para fazer login!</StyledLink>
       </LoginContainer>
     </Container>
-    <FormContainer onSubmit={event => submit(event)}>
-      <FormTitle>Cadastro</FormTitle>
+  );
+}
 
-      <InputField>
-        <UserIco />
-        <input type="text" placeholder="Nome" {...register('name')} />
-      </InputField>
-      <ErrorMessage>{errors.name?.message ?? ''}</ErrorMessage>
+export default SignUp;
+// <FormContainer onSubmit={event => submit(event)}>
+//   <FormTitle>Cadastro</FormTitle>
 
-      <InputField>
-        <EmailIco />
-        <input type="text" placeholder="Email" {...register('username')} />
-      </InputField>
-      <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
+//   <InputField>
+//     <UserIco />
+//     <input type="text" placeholder="Nome" {...register('name')} />
+//   </InputField>
+//   <ErrorMessage>{errors.name?.message ?? ''}</ErrorMessage>
 
-      <InputField>
-        <PassIco />
-        <input type="password" placeholder="Senha" {...register('password1')} />
-      </InputField>
-      <ErrorMessage>{errors.password1?.message ?? ''}</ErrorMessage>
+//   <InputField>
+//     <EmailIco />
+//     <input type="text" placeholder="Email" {...register('username')} />
+//   </InputField>
+//   <ErrorMessage>{errors.username?.message ?? ''}</ErrorMessage>
 
-      <InputField>
-        <PassIco />
-        <input type="password" placeholder="Repetir a senha" {...register('password2')} />
-      </InputField>
-      <ErrorMessage>{errors.password2?.message ?? ''}</ErrorMessage>
+//   <InputField>
+//     <PassIco />
+//     <input type="password" placeholder="Senha" {...register('password1')} />
+//   </InputField>
+//   <ErrorMessage>{errors.password1?.message ?? ''}</ErrorMessage>
 
-      <ButtonGroup>
-        <ButtonNormal type="submit" >Enviar</ButtonNormal>
-        <ButtonNormal onClick={() => navigate('/login')} >Fazer login</ButtonNormal>
-      </ButtonGroup>
-    </FormContainer>
-    );
-  }
+//   <InputField>
+//     <PassIco />
+//     <input type="password" placeholder="Repetir a senha" {...register('password2')} />
+//   </InputField>
+//   <ErrorMessage>{errors.password2?.message ?? ''}</ErrorMessage>
 
-  export default SignUp;
+//   <ButtonGroup>
+//     <ButtonNormal type="submit" >Enviar</ButtonNormal>
+//     <ButtonNormal onClick={() => navigate('/login')} >Fazer login</ButtonNormal>
+//   </ButtonGroup>
+// </FormContainer>
