@@ -1,5 +1,5 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 
 import {
   LoginFormProps,
@@ -8,7 +8,7 @@ import {
   loginValidate,
   signUpType,
   signUpValidate
-} from "types/userTypes";
+} from 'types/userTypes';
 
 
 export function useLogin() {
@@ -18,11 +18,11 @@ export function useLogin() {
     getValues,
     getFieldState,
     formState: { errors },
-  } = useForm<LoginFormProps>({ mode: "onBlur", resolver: zodResolver(loginValidate) });
+  } = useForm<LoginFormProps>({ mode: 'onBlur', resolver: zodResolver(loginValidate) });
 
   const onSubmit = handleSubmit(async (data: loginType) => {
     const { username, password } = data;
-    localStorage.setItem("token", username);///////// retirar
+    localStorage.setItem('token', username);///////// retirar
     console.log(username, password);///////// retirar
   });
 
@@ -42,11 +42,11 @@ export function useSignUp() {
     getValues,
     getFieldState,
     formState: { errors },
-  } = useForm<SignUpFormProps>({ mode: "onBlur", resolver: zodResolver(signUpValidate) });
+  } = useForm<SignUpFormProps>({ mode: 'onBlur', resolver: zodResolver(signUpValidate) });
 
   const onSubmit = handleSubmit(async (data: signUpType) => {
     const { username, password1 } = data;
-    localStorage.setItem("token", username);///////// retirar
+    localStorage.setItem('token', username);///////// retirar
     console.log(username, password1); ///////// retirar
   });
 

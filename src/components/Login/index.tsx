@@ -10,11 +10,11 @@ function Login() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleForm(e: any) {
+  function handleForm(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSignIn(e: any) {
+  function handleSignIn(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
 
@@ -44,7 +44,7 @@ function Login() {
             required
             disabled={isLoading}
             value={form.email}
-            onChange={handleForm} />
+            onChange={shandleForm} />
         </LoginField>
         <LoginField>
           <PassIcon />
