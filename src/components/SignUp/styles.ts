@@ -31,7 +31,6 @@ export const UserIcon = styled(UserIco)`
 `;
 
 export const Container = styled.div`
-    font-family: 'Poppins', sans-serif;
     position: relative;
     width: 400px;
     height: 500px;
@@ -51,7 +50,7 @@ export const Container = styled.div`
         border: none;
         border-radius: 0;
     }
-`; 
+`;
 
 export const LoginContainer = styled.form`
     position: relative;
@@ -69,7 +68,6 @@ export const LoginContainer = styled.form`
 `;
 
 export const LoginTitle = styled.h2`
-    font-family: 'Poppins', sans-serif;
     font-size: 2em;
     color: #fff;
     text-align: center;
@@ -80,7 +78,6 @@ export const LoginField = styled.div`
     border-bottom: 2px solid #fff;
     
     &>input{
-        font-family: 'Poppins', sans-serif;
         width: 100%;
         height: 50px;
         background: transparent;
@@ -96,16 +93,15 @@ export const LoginField = styled.div`
 `;
 
 export const LoginButton = styled.button`
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 40px;
-    background: ${(props) => props.disabled? '#ddd' : '#fff'};
+    background: ${(props) => props.disabled ? '#ddd' : '#fff'};
     border: none;
     outline: none;
     border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
-    color: ${(props) => props.disabled? '#aeaeae' : '#000'};
+    color: ${(props) => props.disabled ? '#aeaeae' : '#000'};
     font-weight: 500;
     margin: 15px 0 10px;
     &:hover{
@@ -116,7 +112,6 @@ export const LoginButton = styled.button`
 
 
 export const StyledLink = styled(Link)`
-    font-family: 'Poppins', sans-serif;
     font-size: .9em;
     color: #fff;
     text-align: center;

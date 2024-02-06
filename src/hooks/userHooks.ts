@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import apiAuth from 'services/apiAuth';
 
 import {
   LoginFormProps,
@@ -21,9 +22,14 @@ export function useLogin() {
   } = useForm<LoginFormProps>({ mode: 'onBlur', resolver: zodResolver(loginValidate) });
 
   const onSubmit = handleSubmit(async (data: loginType) => {
-    const { username, password } = data;
-    localStorage.setItem('token', username);///////// retirar
-    console.log(username, password);///////// retirar
+    return apiAuth.signIn(data)
+      .then(res => {
+        console.log(res.data[0]);
+        localStorage.setItem('token', data.email);///////// retirar
+      })
+      .catch(err => {
+        alert(err.response.data);
+      });
   });
 
   return {
@@ -45,9 +51,13 @@ export function useSignUp() {
   } = useForm<SignUpFormProps>({ mode: 'onBlur', resolver: zodResolver(signUpValidate) });
 
   const onSubmit = handleSubmit(async (data: signUpType) => {
-    const { username, password1 } = data;
-    localStorage.setItem('token', username);///////// retirar
-    console.log(username, password1); ///////// retirar
+    return apiAuth.signUp(data)
+      .then(res => {
+        console.log(res.data[0]);
+      })
+      .catch(err => {
+        alert(err.response.data);
+      });
   });
 
   return {
