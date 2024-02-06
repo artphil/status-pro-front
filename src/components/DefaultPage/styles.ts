@@ -56,9 +56,35 @@ export const MenuButton = styled.button`
 
 export const Footer = styled.footer`
   padding: 0.5rem ${props => props.theme.device.computer.padding};
+  width: 100vw;
   height: 2rem;
-  background-color: ${props => props.theme.color.background};
-  text-align: center;
+  display: flex;
+  justify-content: center;
+
+
+  &>h2{
+        position: absolute;
+        bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: #fff;
+
+        &>a{
+        bottom: 20px;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 4px;
+        color: #fff; 
+        transition: 1s;
+        &:hover{
+            color: #000;
+        }
+    }
+  }
   
   @media screen and (max-width: ${props => props.theme.device.mobile.size}) {
     padding: 0.5rem ${props => props.theme.device.mobile.padding};

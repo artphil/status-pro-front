@@ -39,7 +39,7 @@ function DefaultPage(props: Props) {
       {children}
 
       <Footer>
-        Status PRO -  Design by Arthur and Renato
+        <h2>Criado por <a href='https://www.linkedin.com/in/artphil/' target='_blank' rel='noreferrer'>Arthur Phillip</a> e <a href='https://www.linkedin.com/in/renato-ferreira-01/' target='_blank' rel='noreferrer'>Renato Ferreira</a></h2>
       </Footer>
     </Main>
   );
