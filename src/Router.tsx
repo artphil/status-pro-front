@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import HomePage from 'pages/HomePage';
-import LoginPage from 'pages/LoginPage';
-import SignUpPage from 'pages/SignUpPage';
+import HomePage from "pages/HomePage";
+import LoginPage from "pages/LoginPage";
+import SignUpPage from "pages/SignUpPage";
 
 
 function Router() {

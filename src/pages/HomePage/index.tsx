@@ -4,17 +4,16 @@ import Logout from 'components/Logout';
 import { LobbyContainer } from './style';
 
 function HomePage() {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   const navigate = useNavigate();
-  console.log('token', token); 
 
   useLayoutEffect(() => {
-    if (!token) navigate('login');
+    if (!token) navigate("/login");
   }, []);
 
   return (
     <LobbyContainer>
-        Usuario logado
+      Usuario logado
       <Logout></Logout>
     </LobbyContainer>
   );

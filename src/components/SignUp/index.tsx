@@ -6,7 +6,8 @@ import { PulseLoader } from 'react-spinners';
 import { LoginButton, LoginContainer, LoginField, LoginTitle, Container, EmailIcon, UserIcon, PassIcon, StyledLink } from './style';
 
 function SignUp() {
-  const [form, setForm] = useState({ name: '', nickname: '', email: '', password: '', confirmPassword: '' });
+  const [userName, setUserName] = useState('');
+
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
