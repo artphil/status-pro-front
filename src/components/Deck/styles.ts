@@ -67,6 +67,7 @@ export const CardsContainer = styled.div`
 export const CardMotion = styled.div`
   width: 190px;
   height: 254px;
+  border-radius: 20px;
   background: rgba(211, 211, 211, 0.199);
   position: absolute;
   transition: .3s ease-in-out;
