@@ -1,7 +1,6 @@
 import { ReactNode, useState } from 'react';
 
 import UserIcon from 'assets/icons/email.svg';
-import Logout from 'components/Logout';
 
 import { Footer, Header, Main, MenuButton, MenuContainer, MenuLink } from './styles';
 
