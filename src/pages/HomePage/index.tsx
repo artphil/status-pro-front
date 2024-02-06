@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import DefaultPage from 'components/DefaultPage';
 import Deck from 'components/Deck';
 
-import { GameContainer, GameHeader, GameStatus, HomeContainer, MenuButton, MenuContainer, OnlineContainer, OnlinePlayer, OnlineTitle } from './styles';
-import { LobbyContainer } from './style';
+import { GameContainer, GameHeader, GameStatus, HomeContainer, LobbyContainer, MenuButton, MenuContainer, OnlineContainer, OnlinePlayer, OnlineTitle } from './styles';
 
 // Mock
 const online = [

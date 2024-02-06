@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import fundo from 'assets/backgrounds/backgroundLobby.jpeg';
 
+export const LobbyContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(${fundo});
+    background-size: cover;
+    background-position: top;
+`;
 
 export const HomeContainer = styled.section`
   width: 100%;
@@ -17,7 +29,7 @@ export const HomeContainer = styled.section`
 `;
 
 export const OnlineContainer = styled.div`
-  background-color: ${props => props.theme.color.variant3.main};
+  background-color: rgba(255,255,255,0.3);
   margin: 2rem 0;
   width: 20%;
   height: auto;
@@ -30,7 +42,10 @@ export const OnlineContainer = styled.div`
 
 export const OnlineTitle = styled.h3`
   width: auto;
+  padding: 1rem;
   text-align: center;
+  border-radius: 0.5rem;
+  background-color: ${props => props.theme.color.background};
 `;
 
 export const OnlinePlayer = styled.div`
