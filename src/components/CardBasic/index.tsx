@@ -1,34 +1,45 @@
 import { CardType } from 'types/cardTypes';
+import Logo from 'components/Logo';
 
-import { CardContainer, CardSerie, ContainerInside, CardImage, Status, TopoTitle, CardHeader } from './styles';
+import { CardSerie, ContainerInside, CardImage, Status, TopoTitle, CardHeader, ContainerFront, ContainerBack } from './styles';
 
-function CardBasic(props: CardType) {
-  const {
-    type,
-    serie,
-    name,
-    image,
-    status,
-  } = props;
+interface Props {
+  card: CardType | null
+}
 
-  return (
-    <CardContainer className={type}>
-      <ContainerInside>
-        <CardHeader>
-          <TopoTitle>{name}</TopoTitle>
-          <CardSerie>{serie}</CardSerie>
-        </CardHeader>
-        <CardImage>
-          <img src={`temp/${image}.jpeg`} alt={name} />
-        </CardImage>
-        {status.map((item, index) => (
-          <Status key={index}>
-            <span>{item.label}:</span>
-            <span>{item.value}</span>
-          </Status>
-        ))}
-      </ContainerInside>
-    </CardContainer>
+function CardBasic(props: Props) {
+  const { card } = props;
+
+  function cardSide() {
+    if (card) return (
+      <ContainerFront className={card.type}>
+        <ContainerInside>
+          <CardHeader>
+            <TopoTitle>{card.name}</TopoTitle>
+            <CardSerie>{card.serie}</CardSerie>
+          </CardHeader>
+          <CardImage>
+            <img src={`temp/${card.image}.jpeg`} alt={card.name} />
+          </CardImage>
+          {card.status.map((item, index) => (
+            <Status key={index}>
+              <span>{item.label}:</span>
+              <span>{item.value}</span>
+            </Status>
+          ))}
+        </ContainerInside>
+      </ContainerFront>
+    );
+    else return (
+      <ContainerBack>
+        <Logo />
+      </ContainerBack>
+    );
+  }
+
+  return (<>
+    {cardSide()}
+  </>
   );
 }
 

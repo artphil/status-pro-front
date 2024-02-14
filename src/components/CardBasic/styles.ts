@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const CardContainer = styled.div`
+export const ContainerFront = styled.div`
   border: 2px solid black;
   background: rgb(100,100,100);
   overflow:hidden;
@@ -98,4 +98,17 @@ export const Status = styled.div`
          font-weight: 600;
       }
     }
+`;
+
+export const ContainerBack = styled.div`
+  border: 2px solid black;
+  background: rgb(100,100,100);
+  overflow:hidden;
+  height: 500px;
+  width: 320px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -40px 50px 30px rgba(0, 0, 0, 0.280);
 `;

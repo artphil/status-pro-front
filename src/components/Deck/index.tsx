@@ -31,7 +31,7 @@ function Deck() {
             id={`c${index + 1}`}
             onClick={() => setCardSelected(card)}
           >
-            <CardBasic {...card} />
+            <CardBasic card={card} />
           </CardMotion>
         ))}
       </CardsContainer>
