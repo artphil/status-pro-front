@@ -43,7 +43,7 @@ function HomePage() {
             <Deck />
           </GameContainer>
           <MenuContainer>
-            <MenuButton to={'#'}>Jogar</MenuButton>
+            <MenuButton to={'/game'}>Jogar</MenuButton>
             <MenuButton to={'/deck'}>Meus Decks</MenuButton>
             <MenuButton to={'#'}>Configuraçoes</MenuButton>
             <MenuButton to={'#'}>Loja</MenuButton>

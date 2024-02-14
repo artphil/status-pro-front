@@ -6,6 +6,7 @@ import SignUpPage from 'pages/SignUpPage';
 
 import HomePage from 'pages/HomePage';
 import DeckPage from 'pages/DeckPage';
+import GamePage from 'pages/GamePage';
 
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/deck" element={<DeckPage />} />
+        <Route path="/game" element={<GamePage />} />
       </Routes>
     </BrowserRouter>
   );
