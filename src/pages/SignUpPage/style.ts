@@ -13,7 +13,7 @@ export const Main = styled.div`
     background-size: cover;
     background-position: center;
     animation: animateBG 7s linear infinite;
-    &>h1{
+    &>h2{
         position: absolute;
         bottom: 20px;
         font-family: 'Poppins', sans-serif;

@@ -34,6 +34,17 @@ export const Theme = {
     big: '2rem',
     bigger: '3rem',
   },
+
+  device: {
+    computer: {
+      padding: '6rem',
+      size: '1700px',
+    },
+    mobile: {
+      padding: '1rem',
+      size: '700px',
+    },
+  },
 };
 
 export type ThemeType = typeof Theme
@@ -73,5 +84,16 @@ export const DarkTheme: ThemeType = {
     default: '1rem',
     big: '2rem',
     bigger: '3rem',
+  },
+
+  device: {
+    computer: {
+      padding: '6rem',
+      size: '1700px',
+    },
+    mobile: {
+      padding: '1rem',
+      size: '700px',
+    },
   },
 };

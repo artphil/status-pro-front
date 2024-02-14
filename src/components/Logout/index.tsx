@@ -1,12 +1,21 @@
+import { useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function Logout() {
+  const navigate = useNavigate();
+
   function logout() {
     localStorage.removeItem('token');
-    window.location.reload();
   }
+  useLayoutEffect(() => {
+    logout();
+    navigate('/login');
+  }, []);
+
   return (
-    <button
-      onClick={logout}
-    >Logout</button>
+    <main>
+      Logout Page
+    </main>
   );
 }
 

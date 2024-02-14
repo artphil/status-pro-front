@@ -1,43 +1,33 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import apiAuth from 'services/apiAuth';
 import { PulseLoader } from 'react-spinners';
 
-import { LoginButton, LoginContainer, LoginField, LoginTitle, Container, EmailIcon, UserIcon, PassIcon, StyledLink } from './style';
+import { useSignUp } from 'hooks/userHooks';
+
+import { LoginButton, LoginContainer, LoginField, LoginTitle, Container, EmailIcon, UserIcon, PassIcon, StyledLink } from './styles';
+
 
 function SignUp() {
-  const [form, setForm] = useState({
-    name: '',
-    nickname: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleForm(e: React.ChangeEvent<HTMLInputElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  const { onSubmit, register } = useSignUp();
 
   function handleSignUp(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
 
-    apiAuth.signUp(form)
-      .then(res => {
-        console.log(res.data[0]);
-        localStorage.setItem('token', form.name);
+    onSubmit()
+      .then(() => {
         setIsLoading(false);
         navigate('/');
       })
       .catch(err => {
-        console.log(err);
         alert(err.response.data);
         setIsLoading(false);
       });
   }
+
 
   return (
     <Container>
@@ -47,59 +37,50 @@ function SignUp() {
           <UserIcon />
           <input
             type="text"
-            name="name"
             required
             placeholder="Nome"
             disabled={isLoading}
-            value={form.name}
-            onChange={handleForm} />
+            {...register('name')}
+          />
         </LoginField>
         <LoginField>
           <UserIcon />
           <input
             type="text"
-            name="nickname"
             required
             placeholder="Nickname"
             disabled={isLoading}
-            value={form.nickname}
-            onChange={handleForm}
+            {...register('nickname')}
           />
         </LoginField>
         <LoginField>
           <EmailIcon />
           <input
-            name="email"
             placeholder="Email"
             type="email"
             required
             disabled={isLoading}
-            value={form.email}
-            onChange={handleForm}
+            {...register('email')}
           />
         </LoginField>
         <LoginField>
           <PassIcon />
           <input
-            name="password"
             placeholder="Senha"
             type="password"
             required
             disabled={isLoading}
-            value={form.password}
-            onChange={handleForm}
+            {...register('password')}
           />
         </LoginField>
         <LoginField>
           <PassIcon />
           <input
-            name="confirmPassword"
             placeholder="Repetir a senha"
             type="password"
             required
             disabled={isLoading}
-            value={form.confirmPassword}
-            onChange={handleForm}
+            {...register('confirmPassword')}
           />
         </LoginField>
         <LoginButton disabled={isLoading}>
